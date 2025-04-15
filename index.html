@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taller: Ecuaciones Diferenciales Lineales - Respuestas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .question {
+            margin-top: 25px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        p {
+            margin-top: 8px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .ejercicio {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        em {
+            color: #2c3e50;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        strong {
+            color: #2980b9;
+        }
+    </style>
+
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Taller: Ecuaciones Diferenciales Lineales de Primer Orden</h1>
+    </header>
+<section>
+
+    <h2>Nombre: <strong>Guillermo Hernández</strong></h2>
+    <p>Responde las siguientes preguntas:</p>
+</section>
+    
+    <section>       
+    
+    <h2>Punto 1: Investigación</h2>
+    <div class="question">a) ¿Qué caracteriza a una ecuación diferencial lineal de primer orden?</div>
+    <p>
+        Una ecuación diferencial lineal de primer orden es aquella que involucra una derivada de primer orden de una función y puede escribirse en la forma: 
+        $$ \frac{dy}{dx} + P(x)y = Q(x) $$
+        Se caracteriza porque la función dependiente \( y \) y su derivada aparecen de forma lineal, es decir, no están elevadas a potencias ni multiplicadas entre sí.
+    </p>
+
+    <div class="question">b) ¿Cuál es su forma general?</div>
+    <p>
+        La forma general de una ecuación diferencial lineal de primer orden es:
+        $$ \frac{dy}{dx} + P(x)y = Q(x) $$
+        donde \( P(x) \) y \( Q(x) \) son funciones continuas en un intervalo dado, y \( y \) es la función desconocida.
+    </p>
+
+    <div class="question">c) ¿Qué es un factor integrante y cómo se utiliza para resolver este tipo de ecuaciones?</div>
+    <p>
+        El <strong>factor integrante</strong> es una función \( \mu(x) \) que se usa para resolver ecuaciones diferenciales lineales de primer orden. Se define como:
+        $$ \mu(x) = e^{\int P(x)\,dx} $$
+        Multiplicando toda la ecuación por \( \mu(x) \), se convierte en:
+        $$ \mu(x)\frac{dy}{dx} + \mu(x)P(x)y = \mu(x)Q(x) $$
+        lo que se puede escribir como:
+        $$ \frac{d}{dx}[\mu(x)y] = \mu(x)Q(x) $$
+        Luego se integra ambos lados para hallar la solución general.
+    </p>
+</section>
+
+<section>
+    <h2>Punto 2: Ejercicios</h2>
+    <p>Resuelve los siguientes ejercicios utilizando el método del factor integrante. Justifica todos los pasos:</p>
+    <ul>
+        <li>Ejercicio 1:</li>
+        <div class="ejercicio">            
+            <p><strong>Ecuación:</strong></p>
+            <p>
+                $$ \frac{dy}{dx} + y = e^{-x} $$
+            </p>
+    
+            <div class="paso">
+                <strong>Paso 1: Forma estándar</strong><br>
+                La ecuación está en la forma:<br>
+                $$ \frac{dy}{dx} + P(x)y = Q(x) $$<br>
+                donde \( P(x) = 1 \), \( Q(x) = e^{-x} \)
+            </div>
+    
+            <div class="paso">
+                <strong>Paso 2: Factor integrante</strong><br>
+                $$ \mu(x) = e^{\int P(x)\,dx} = e^{\int 1\, dx} = e^x $$
+            </div>
+    
+            <div class="paso">
+                <strong>Paso 3: Multiplicamos por el factor integrante</strong><br>
+                $$ e^x \cdot \frac{dy}{dx} + e^x \cdot y = e^x \cdot e^{-x} $$<br>
+                $$ e^x \cdot \frac{dy}{dx} + e^x y = 1 $$
+            </div>
+    
+            <div class="paso">
+                <strong>Paso 4: Derivada del producto</strong><br>
+                $$ \frac{d(e^x \cdot y)}{dx}  = 1 $$
+            </div>
+    
+            <div class="paso">
+                <strong>Paso 5: Integramos ambos lados</strong><br>
+                $$ \int d(e^x \cdot y) = \int 1\, dx $$<br>
+                $$ e^x y = x + C $$
+            </div>
+    
+            <div class="paso">
+                <strong>Paso 6: Despejamos</strong><br>
+                $$ y = \frac{x + C}{e^x} $$
+            </div>
+    
+            <p><strong>✅ Solución final</strong> $$ \boxed{y = \frac{x + C}{e^x}} $$</p>
+        </div>
+        <li>Ejercicio 2:</li>
+        <div class="ejercicio">   
+            <p><strong>Ecuación:</strong></p>
+        <div class="paso">
+            \[
+            \frac{dy}{dx} + 2y = \cos(x)
+            \]
+          </div>
+        
+          <strong>Paso 1: Forma estándar</strong>
+          <p>Identificamos la ecuación en la forma:</p>
+          <div class="paso">
+            \[
+            \frac{dy}{dx} + P(x)y = Q(x), \quad P(x) = 2, \quad Q(x) = \cos(x)
+            \]
+          </div>
+        
+          <strong>Paso 2: Factor integrante</strong>
+          <p>Calculamos:</p>
+          <div class="paso">
+            \[
+            \mu(x) = e^{\int 2\,dx} = e^{2x}
+            \]
+          </div>
+        
+          <strong>Paso 3: Multiplicamos por el factor integrante</strong>
+          <div class="paso">
+            \[
+            e^{2x} \cdot \frac{dy}{dx} + 2e^{2x}y = e^{2x} \cos(x)
+            \Rightarrow \frac{d(e^{2x} \cdot y)}{dx} = e^{2x} \cos(x)
+            \]
+          </div>
+        
+          <strong>Paso 4: Integrar ambos lados</strong>
+          <p>Ahora resolvemos:</p>
+          <div class="paso">
+            \[
+            \int (e^{2x}y)\ = \int e^{2x} \cos(x)\, dx
+            \]
+          </div>
+        
+          <strong>Detalle de la integral</strong>
+          <h4> \( \int e^{2x} \cos(x)\, dx \)</h4>
+          <p>Usamos la fórmula:</p>
+          <p>\[
+            \int u\, dv = uv - \int v\, du
+          \]</p>
+          <strong><h4>Primera integración por partes</h4></strong>
+          <p>Sea:</p>
+          <ul>
+            <li>\( u = \cos(x) \Rightarrow du = -\sin(x)\,dx \)</li>
+            <li>\( dv = e^{2x}\,dx \Rightarrow v = \frac{1}{2} e^{2x} \)</li>
+          </ul>
+        
+          <p>Aplicamos:</p>
+          <div class="paso">
+            \[
+            \int e^{2x} \cos(x)\,dx = \frac{1}{2} e^{2x} \cos(x) + \frac{1}{2} \int e^{2x} \sin(x)\,dx
+            \]
+          </div>
+        
+          <strong><h4>Segunda integración por partes</h4></strong>
+            <p>Ahora integramos:</p>
+            \[
+            \int e^{2x} \sin(x)\,dx
+            \]
+            <p>Sea:</p>
+            <ul>
+                <li>\( u = \sin(x) \Rightarrow du = \cos(x)\,dx \)</li>
+                <li>\( dv = e^{2x}\,dx \Rightarrow v = \frac{1}{2} e^{2x} \)</li>
+            </ul>
+
+            <p>Entonces:</p>
+            <div class="paso">
+                \[
+                \int e^{2x} \sin(x)\,dx = \frac{1}{2} e^{2x} \sin(x) - \frac{1}{2} \int e^{2x} \cos(x)\,dx
+                \]
+            </div>
+
+            <strong>Sustituyendo todo</strong>
+            <div class="paso">
+                \[
+                \int e^{2x} \cos(x)\,dx = \frac{1}{2} e^{2x} \cos(x) + \frac{1}{2}
+                \left( \frac{1}{2} e^{2x} \sin(x) - \frac{1}{2} \int e^{2x} \cos(x)\,dx \right)
+                \]
+            </div>
+
+            <p>Simplificamos:</p>
+            <div class="paso">
+                \[
+                \int e^{2x} \cos(x)\,dx =
+                \frac{1}{2} e^{2x} \cos(x) + \frac{1}{4} e^{2x} \sin(x) - \frac{1}{4} \int e^{2x} \cos(x)\,dx
+                \]
+            </div>
+
+            <strong>Despejamos la integral</strong>
+            <p>Llamamos \( I = \int e^{2x} \cos(x)\,dx \)</p>
+            <div class="paso">
+                \[
+                I = \frac{1}{2} e^{2x} \cos(x) + \frac{1}{4} e^{2x} \sin(x) - \frac{1}{4} I
+                \]
+            </div>
+
+            <p>Sumamos \( \frac{1}{4}I \) a ambos lados:</p>
+            <div class="paso">
+                \[
+                \frac{5}{4}I = e^{2x} \left( \frac{1}{2} \cos(x) + \frac{1}{4} \sin(x) \right)
+                \Rightarrow
+                I = \frac{e^{2x}}{5} (2\cos(x) + \sin(x))
+                \]
+            </div>
+
+            <strong>Paso 5: Sustituimos y despejamos \( y \)</strong>
+            <div class="paso">
+                \[
+                e^{2x} y = \frac{e^{2x}}{5}(2\cos(x) + \sin(x)) + C
+                \Rightarrow
+                y(x) = \frac{2\cos(x) + \sin(x)}{5} + Ce^{-2x}
+                \]
+            </div>
+
+            <strong>✅ Solución final</strong>
+            <div class="paso">
+                \[
+                \boxed{y(x) = \frac{2\cos(x) + \sin(x)}{5} + Ce^{-2x}}
+                \]
+            </div>
+
+        </div>
+        <li>Ejercicio 3:</li>
+        <div class="ejercicio">
+            <p><strong>Ecuación:</strong></p>
+            <div class="paso">
+                \[
+                x \frac{dy}{dx} + y = x^2, \quad x > 0
+                \]
+              </div>
+            
+              <div class="paso">
+                <strong>Paso 1: Dividimos entre \(x\) para obtener forma estándar</strong>
+                \[
+                \frac{dy}{dx} + \frac{1}{x} y = x
+                \]
+                Esta es una ecuación lineal de la forma:
+                \[
+                \frac{dy}{dx} + P(x)y = Q(x), \quad P(x) = \frac{1}{x}, \quad Q(x) = x
+                \]
+              </div>
+            
+              <div class="paso">
+                <strong>Paso 2: Factor integrante</strong>
+                <p>Calculamos el factor integrante:</p>
+                \[
+                \mu(x) = e^{\int P(x)\, dx} = e^{\int \frac{1}{x}\, dx} = e^{\ln|x|} = x \quad (\text{ya que } x > 0)
+                \]
+              </div>
+            
+              <div class="paso">
+                <strong>Paso 3: Multiplicamos toda la ecuación por el factor integrante \(x\)</strong>
+                \[
+                x \cdot \frac{dy}{dx} + x \cdot \frac{1}{x} y = x \cdot x
+                \Rightarrow x \frac{dy}{dx} + y = x^2
+                \]
+                Observamos que al multiplicar por el factor integrante, la ecuación queda:
+                \[
+                \frac{d(x \cdot y)}{dx} = x^2
+                \]
+              </div>
+            
+              <div class="paso">
+                <strong>Paso 4: Integramos ambos lados</strong>
+                \[
+                \int {d(x \cdot y)}\ = \int x^2\, dx
+                \Rightarrow xy = \frac{x^3}{3} + C
+                \]
+              </div>
+            
+              <div class="paso">
+                <strong>Paso 5: Despejamos \(y\)</strong>
+                \[
+                y = \frac{x^3}{3x} + \frac{C}{x} = \frac{x^2}{3} + \frac{C}{x}
+                \]
+              </div>
+            
+              <div class="paso">
+                <strong>✅ Solución general:</strong>
+                \[
+                \boxed{y(x) = \frac{x^2}{3} + \frac{C}{x}}, \quad x > 0
+                \]
+              </div>
+        </div>
+        <li>Ejercicio 4:</li>
+        <div class="ejercicio">
+            <p><strong>Ecuación:</strong></p>
+            <div class="paso">
+                \[
+                \frac{dy}{dx} + \frac{2}{x} y = x^2
+                \]
+                Es una ecuación lineal de la forma:
+                \[
+                \frac{dy}{dx} + P(x)y = Q(x)
+                \]
+                Donde:  
+                \( P(x) = \frac{2}{x} \),  
+                \( Q(x) = x^2 \)
+                </div>
+            
+                <div class="paso">
+                <strong>Paso 1: Calcular el factor integrante</strong>
+                \[
+                \mu(x) = e^{\int P(x)\, dx} = e^{\int \frac{2}{x}\, dx} = e^{2\ln|x|} = x^2 
+                \]
+                </div>
+            
+                <div class="paso">
+                <strong>Paso 2: Multiplicamos toda la ecuación por el factor integrante \(x^2\)</strong>
+                \[
+                x^2 \cdot \frac{dy}{dx} + x^2 \cdot \frac{2}{x} y = x^2 \cdot x^2
+                \]
+                \[
+                x^2 \frac{dy}{dx} + 2x y = x^4
+                \]
+                Observamos que el lado izquierdo es derivada del producto:
+                \[
+                \frac{d (x^2 \cdot y)}{dx} = x^4
+                \]
+                </div>
+            
+                <div class="paso">
+                <strong>Paso 3: Integramos ambos lados</strong>
+                \[
+                \int {d (x^2 \cdot y)} = \int x^4\, dx
+                \Rightarrow x^2 y = \frac{x^5}{5} + C
+                \]
+                </div>
+            
+                <div class="paso">
+                <strong>Paso 4: Despejamos \(y\)</strong>
+                \[
+                y = \frac{x^5}{5x^2} + \frac{C}{x^2} = \frac{x^3}{5} + \frac{C}{x^2}
+                \]
+                </div>
+            
+                <div class="paso">
+                <strong>✅ Solución general:</strong>
+                \[
+                \boxed{y(x) = \frac{x^3}{5} + \frac{C}{x^2}}, \quad x > 0
+                \]
+                </div>
+    </ul>
+</section>
+
+<section>
+    <h2>Punto 3: Reflexión</h2>
+    <p>Escribe una breve reflexión respondiendo:</p>
+    <ul>
+        <li><strong>¿En qué contextos del mundo real crees que podrían aplicarse este tipo de ecuaciones?</strong></li>
+        <p>
+            Las ecuaciones diferenciales lineales de primer orden se aplican en muchos contextos como el crecimiento o decaimiento poblacional, el enfriamiento de un objeto (Ley de Newton), el estudio de circuitos eléctricos (ley de Ohm con inductores y resistencias) y modelos de velocidad de reacción química.
+        </p>
+
+        <li><strong>¿Qué dificultad tuviste al resolver los ejercicios?</strong></li>
+        <p>
+            La principal dificultad fue calcular correctamente el factor integrante, ya que requiere integrar con precisión. También puede ser complicado identificar si la ecuación está en la forma adecuada para aplicar el método.
+        </p>
+
+        <li><strong>¿Qué diferencias encuentras con respecto al método de variables separables?</strong></li>
+        <p>
+            El método de variables separables solo se puede aplicar cuando se pueden aislar todas las variables en diferentes lados de la ecuación. En cambio el método del factor integrante se aplica a ecuaciones lineales que no necesariamente pueden separarse. Es un método más general y útil para muchas ecuaciones en las que las variables no pueden separarse fácilmente.
+        </p>
+    </ul>
+</section>
+
+</body>
+</html>
